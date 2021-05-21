@@ -1,4 +1,4 @@
-basic.forever(function on_forever() {
+basic.forever(function () {
     basic.showNumber(input.temperature())
     basic.showNumber(pins.analogReadPin(AnalogPin.P0))
     if (input.temperature() >= 8 && input.temperature() <= 30) {
@@ -7,29 +7,23 @@ basic.forever(function on_forever() {
             basic.showString("H.OK")
             basic.showIcon(IconNames.Yes)
         }
-        
     }
-    
     if (input.temperature() < 8 || input.temperature() > 30) {
         if (pins.analogReadPin(AnalogPin.P0) >= 200 && pins.analogReadPin(AnalogPin.P0) <= 600) {
+            soundExpression.slide.play()
             basic.showString("T.MAL")
         }
-        
     }
-    
     if (input.temperature() >= 8 && input.temperature() <= 30) {
         if (pins.analogReadPin(AnalogPin.P0) < 200 || pins.analogReadPin(AnalogPin.P0) > 600) {
             basic.showString("H.MAL")
         }
-        
     }
-    
     if (input.temperature() < 8 || input.temperature() > 30) {
         if (pins.analogReadPin(AnalogPin.P0) < 200 || pins.analogReadPin(AnalogPin.P0) > 600) {
+            soundExpression.soaring.play()
             basic.showString("T.MAL")
             basic.showString("H.MAL")
         }
-        
     }
-    
 })

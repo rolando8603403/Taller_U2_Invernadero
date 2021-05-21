@@ -1,5 +1,5 @@
 {
-    "name": "sensores",
+    "name": "taller_U2_invernadero",
     "description": "",
     "dependencies": {
         "core": "*",
@@ -18,5 +18,5 @@
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "pyprj"
+    "preferredEditor": "blocksprj"
 }
